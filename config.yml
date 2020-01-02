@@ -1,0 +1,67 @@
+#Hello there :)
+#
+# This is my CustomBee plugin.
+# If you find any error, please contact me on spigotmc!
+# 
+# I glad, if you use my plugin!
+#
+# If you enjoy my work, please donate me :)
+# https://www.paypal.me/tothviktor
+#
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+WorldEnable:
+- world
+
+CustomBee:
+  Prefix: '&7[&eCustom&6Bee&7]'
+  Commands:
+    Permissions:
+      help: custombee.cmd.help
+      reload: custombee.cmd.reload
+    Messages:
+      help: '%prefix% &a/cb reload - to reload the plugin config!'
+      reload: '%prefix% &aThe configuration was successfully reloaded!'
+    UsageMessage: '%prefix% &cUnknown subcommand. Use &7/cb &cto list of commands!'
+    PermissionError: '%prefix% &cYou do not have enough permission for use this command!'
+  #Customize bees names
+  CustomName:
+    Name:
+    - '&a&l%health%&8/&a&l%max-health% &7| &6&nBee'
+    #If you do not want to see custom name, then setting it up to false
+    NameVisible: true
+  #Bee health
+  Health: 5
+  #Bee damage
+  Damage: 1
+  #ExpDrop
+  ExpDrop: 5
+  Glowing: false
+  #If this setting is true, every spawned bee will be baby
+  EveryBeeBaby: true
+  #If this setting is true, then all bees can be ridden!
+  Rideable: false
+  #You can add unlimited drops
+  CustomDrops:
+    Drops:
+      loot1:
+        enable: true
+        amount: 1
+        chance: 50
+        enchantment:
+          enable: false
+          enchant: []
+          level: 0
+        item: 
+        - 'HONEY_BOTTLE'
+        name:
+        - '&e&oMagic Honey'
+        lore:
+        - ''
+        - '&bThis is basic honey'
+        - ''
+        - ''
+CustomGui:
+  Diamond:
+    lore:
+    - ''
+    - 'This is the lore of diamond about'

@@ -1,0 +1,9 @@
+name: CustomBee
+main: com.fighter.BeeAttack.main.main
+version: 1.0.5
+api-version: 1.13
+author: Fighter20000
+
+commands:
+  custombee:
+    aliases: [cb]
