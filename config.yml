@@ -1,67 +1,82 @@
-#Hello there :)
-#
-# This is my CustomBee plugin.
-# If you find any error, please contact me on spigotmc!
-# 
-# I glad, if you use my plugin!
-#
-# If you enjoy my work, please donate me :)
-# https://www.paypal.me/tothviktor
-#
-# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-WorldEnable:
-- world
+Messages:
+  #use this everywhere with %prefix%
+  prefix: "&8[ &eCute&6Bees &8]"
+  help-usage: "%prefix% &cNot enough argument. &f/cb help"
+  reload: "%prefix% &aPlugin has been reloaded!"
+  wrong-configuration: "%prefix% &cError in your configuration!\n%prefix% &cPlease check your console and contact me on github if you cant fix it!"
+  enable-world-usage: "%prefix% &c/cb enable <world>"
+  enable-world: "%prefix% &aWorld successfully added to list"
+  world-already-exists: "%prefix% &cThis world is already exists!"
+  disable-world-usage: "%prefix% &c/cb disable <world>"
+  disable-world: "%prefix% &aWorld successfully disabled!"
+  world-not-exists: "%prefix% This world not exists in the list!"
+  unknown-subcommand: "%prefix% &cWrong subcommand. Use &f/cb help"
+  no-permission: "&cYou don't have enough permission for this action"
 
-CustomBee:
-  Prefix: '&7[&eCustom&6Bee&7]'
-  Commands:
-    Permissions:
-      help: custombee.cmd.help
-      reload: custombee.cmd.reload
-    Messages:
-      help: '%prefix% &a/cb reload - to reload the plugin config!'
-      reload: '%prefix% &aThe configuration was successfully reloaded!'
-    UsageMessage: '%prefix% &cUnknown subcommand. Use &7/cb &cto list of commands!'
-    PermissionError: '%prefix% &cYou do not have enough permission for use this command!'
-  #Customize bees names
-  CustomName:
-    Name:
-    - '&a&l%health%&8/&a&l%max-health% &7| &6&nBee'
-    #If you do not want to see custom name, then setting it up to false
-    NameVisible: true
-  #Bee health
-  Health: 5
-  #Bee damage
-  Damage: 1
-  #ExpDrop
-  ExpDrop: 5
-  Glowing: false
-  #If this setting is true, every spawned bee will be baby
-  EveryBeeBaby: true
-  #If this setting is true, then all bees can be ridden!
-  Rideable: false
-  #You can add unlimited drops
-  CustomDrops:
-    Drops:
-      loot1:
-        enable: true
-        amount: 1
-        chance: 50
-        enchantment:
-          enable: false
-          enchant: []
-          level: 0
-        item: 
-        - 'HONEY_BOTTLE'
-        name:
-        - '&e&oMagic Honey'
-        lore:
-        - ''
-        - '&bThis is basic honey'
-        - ''
-        - ''
-CustomGui:
-  Diamond:
+CuteBees:
+  #%bees-name%
+  bee-name: "&eC&6u&et&6e&eB&6e&ee &8- &7%bee-health%&8/&7%bee-max-health%"
+  bee-glowing: false
+  custom-name-visible: true
+  every-bee-baby: true
+
+
+
+custom-bee-drops:
+  #Common drop
+  item1:
+    item-id: "HONEYCOMB"
+    display-name: "&7[  &eHoney  &7]"
+    ammount: 3
+    #chance 0 to 100.
+    chance: 60
+    #Flags: HIDE_ENCHANTS, HIDE_ATTRIBUTES, HIDE_DESTROYS, HIDE_PLACED_ON, HIDE_POTION_EFFECTS, HIDE_UNBREAKABLE, HIDE_ALL_FLAG
+    item-flags:
+      - 'HIDE_ALL_FLAG'
+    #If you don'T want to use enchantments just leave empty and use [] at end of string(enchantments: [])
+    enchantments:
+      - 'FORTUNE:10'
     lore:
-    - ''
-    - 'This is the lore of diamond about'
+      - ''
+      - '&dHmm&c.... &fHoney, &6Yummy Yummy'
+      - ''
+      - '&7&oRarity: &aCommon'
+      - ''
+  #Etremely rare drop(you can customize everything)
+  item2:
+    item-id: "NETHERITE_INGOT"
+    display-name: "&5Netherite"
+    ammount: 1
+    #chance 0 to 100.
+    chance: 5
+    #Flags: HIDE_ENCHANTS, HIDE_ATTRIBUTES, HIDE_DESTROYS, HIDE_PLACED_ON, HIDE_POTION_EFFECTS, HIDE_UNBREAKABLE, HIDE_ALL_FLAG
+    item-flags:
+      - 'HIDE_ENCHANTS'
+    #If you don'T want to use enchantments just leave empty and use [] at end of string(enchantments: [])
+    enchantments:
+      - 'FORTUNE:100'
+      - 'UNBREAKING:1'
+    lore:
+      - ''
+      - '&dThis is the best &6&ldiamond &din the world'
+      - ''
+      - ''
+  #Etremely rare drop(you can customize everything)
+  item3:
+    item-id: "IRON_SWORD"
+    display-name: "&6Hamer"
+    ammount: 1
+    #chance 0 to 100.
+    chance: 10
+    #Flags: HIDE_ENCHANTS, HIDE_ATTRIBUTES, HIDE_DESTROYS, HIDE_PLACED_ON, HIDE_POTION_EFFECTS, HIDE_UNBREAKABLE, HIDE_ALL_FLAG
+    item-flags:
+      - 'HIDE_ATTRIBUTES'
+    #If you don'T want to use enchantments just leave empty and use [] at end of string(enchantments: [])
+    enchantments:
+      - 'FORTUNE:100'
+      - 'UNBREAKING:1000'
+    lore:
+      - ''
+      - '&dThis is the best &6&lHamer &din the world'
+      - ''
+      - ''
