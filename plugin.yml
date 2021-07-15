@@ -1,9 +1,7 @@
-name: CustomBee
-main: com.fighter.BeeAttack.main.main
-version: 1.0.5
+name: CuteBees_CustomBeeRework
+main: com.fighter.cutebees.main.Main
+version: 1.0.6-REWORKED
 api-version: 1.13
-author: Fighter20000
-
 commands:
-  custombee:
-    aliases: [cb]
+  cutebees:
+    aliases: [ cb, cuteb ]
