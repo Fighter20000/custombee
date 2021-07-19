@@ -1,0 +1,58 @@
+custom-bee-drops:
+  #Common drop
+  item1:
+    material: "HONEYCOMB"
+    display-name: "&7[  &eHoney  &7]"
+    amount: 3
+    #chance 0 to 100.
+    chance: 60
+    #Flags: HIDE_ENCHANTS, HIDE_ATTRIBUTES, HIDE_DESTROYS, HIDE_PLACED_ON, HIDE_POTION_EFFECTS, HIDE_UNBREAKABLE, HIDE_ALL_FLAG
+    item-flags:
+      - 'HIDE_ALL_FLAG'
+    #If you don'T want to use enchantments just leave empty and use [] at end of string(enchantments: [])
+    enchantments:
+      - 'FORTUNE:10'
+    lore:
+      - ''
+      - '&dHmm&c.... &fHoney, &6Yummy Yummy'
+      - ''
+      - '&7&oRarity: &aCommon'
+      - ''
+  #Etremely rare drop(you can customize everything)
+  item2:
+    material: "NETHERITE_INGOT"
+    display-name: "&5Netherite"
+    amount: 1
+    #chance 0 to 100.
+    chance: 5
+    #Flags: HIDE_ENCHANTS, HIDE_ATTRIBUTES, HIDE_DESTROYS, HIDE_PLACED_ON, HIDE_POTION_EFFECTS, HIDE_UNBREAKABLE, HIDE_ALL_FLAG
+    item-flags:
+      - 'HIDE_ENCHANTS'
+    #If you don'T want to use enchantments just leave empty and use [] at end of string(enchantments: [])
+    enchantments:
+      - 'FORTUNE:100'
+      - 'UNBREAKING:1'
+    lore:
+      - ''
+      - '&dThis is the best &6&ldiamond &din the world'
+      - ''
+      - ''
+  #Etremely rare drop(you can customize everything)
+  item3:
+    matrial: "IRON_SWORD"
+    display-name: "&6Hamer"
+    amount: 1
+    #chance 0 to 100.
+    chance: 10
+    #Flags: HIDE_ENCHANTS, HIDE_ATTRIBUTES, HIDE_DESTROYS, HIDE_PLACED_ON, HIDE_POTION_EFFECTS, HIDE_UNBREAKABLE, HIDE_ALL_FLAG
+    item-flags:
+      - 'HIDE_ATTRIBUTES'
+    #If you don'T want to use enchantments just leave empty and use [] at end of string(enchantments: [])
+    enchantments:
+      - 'FORTUNE:100'
+      - 'UNBREAKING:1000'
+    lore:
+      - ''
+      - '&dThis is the best &6&lHamer &din the world'
+      - ''
+      - ''

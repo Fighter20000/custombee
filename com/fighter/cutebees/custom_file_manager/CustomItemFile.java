@@ -1,5 +1,6 @@
 package com.fighter.cutebees.custom_file_manager;
 
+import com.fighter.cutebees.listeners.EntityBeeDeathDropListener;
 import com.fighter.cutebees.main.Main;
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -8,28 +9,27 @@ import org.bukkit.configuration.file.YamlConfiguration;
 import java.io.File;
 import java.io.IOException;
 
-public class WorldEnable {
+public class CustomItemFile {
 
+    private static FileConfiguration itemConfig;
+    private static File itemFile;
 
-    private static FileConfiguration worldConfig;
-    private static File worldFile;
-
-    public static FileConfiguration getWorldConfig() {
-        return worldConfig;
+    public static FileConfiguration getItemConfig() {
+        return itemConfig;
     }
 
-    public static void generateWorldFile() {
-        worldFile = new File(Main.getInstance().getDataFolder(), "enabled_worlds.yml");
+    public static void generateCustomItemFile() {
+        itemFile = new File(Main.getInstance().getDataFolder(), "custom_items.yml");
 
-        if(!worldFile.exists()) {
-            worldFile.getParentFile().mkdir();
-            Main.getInstance().saveResource("enabled_worlds.yml", false);
+        if(!itemFile.exists()) {
+            itemFile.getParentFile().mkdir();
+            Main.getInstance().saveResource("custom_items.yml", false);
         }
 
-        worldConfig = new YamlConfiguration();
+        itemConfig = new YamlConfiguration();
 
         try {
-            worldConfig.load(worldFile);
+            itemConfig.load(itemFile);
         } catch (IOException | InvalidConfigurationException e) {
             e.printStackTrace();
         }
@@ -37,7 +37,7 @@ public class WorldEnable {
     }
     public static void saveConfig() {
         try {
-            worldConfig.save(worldFile);
+            itemConfig.save(itemFile);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -45,7 +45,8 @@ public class WorldEnable {
 
     public static void reloadConfig() {
         try {
-            worldConfig.load(worldFile);
+            itemConfig.load(itemFile);
+            EntityBeeDeathDropListener.loadCustomItems();
             saveConfig();
         } catch (IOException | InvalidConfigurationException e) {
             e.printStackTrace();

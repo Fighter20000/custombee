@@ -13,11 +13,12 @@ import java.util.List;
 import java.util.Map;
 
 public class ItemBuild extends Items {
-    private ItemStack itemStack;
-    private Material material;
+    private final ItemStack itemStack;
+    private final Material material;
     private int amount;
     private ItemMeta itemMeta = null;
     private byte b;
+    private int chance;
 
     public ItemBuild(Material material, int amount) {
         this.amount = amount;
@@ -75,11 +76,12 @@ public class ItemBuild extends Items {
 
     @Override
     public int getAmount() {
-        return itemStack.getAmount();
+        return amount;
     }
 
     @Override
     public ItemBuild setAmount(int amount) {
+        this.amount = amount;
         itemStack.setAmount(amount);
         return this;
     }
@@ -234,6 +236,12 @@ public class ItemBuild extends Items {
         }
         return this;
     }
+
+    @Override
+    public int getChance() { return chance; }
+
+    @Override
+    public void setChance(int item_chance) { this.chance = item_chance; }
 
     public ItemStack convertToItemStack() {
         return itemStack;

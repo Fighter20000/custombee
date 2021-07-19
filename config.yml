@@ -12,6 +12,26 @@ Messages:
   world-not-exists: "%prefix% This world not exists in the list!"
   unknown-subcommand: "%prefix% &cWrong subcommand. Use &f/cb help"
   no-permission: "&cYou don't have enough permission for this action"
+  customitems:
+    open-inventory: "%prefix% &aCustomItems inventory opened!"
+    create-item: "%prefix% &aCustomItem successfully created!"
+    item-exists: "%prefix% &cThis item-key already exists!"
+    create-usage: "%prefix% &a/cb create &ccustomitem <item-key> <material> <amount> <display-name> <chance>"
+    item-key-usage:
+      - "%prefix% &a/cb create customitem &c<item-key> <material> <amount> <display-name> <chance>"
+      - "%prefix% &cAdd an item key, whatever you want(don't use spaces!!!)"
+    material-usage:
+      - "%prefix% &a/cb create customitem <item-key> &c<material> &c<amount> <display-name> <chance>"
+      - "%prefix% &cAdd a valid material, like STONE"
+    amount-usage:
+      - "%prefix% &a/cb create customitem <item-key> <material> &c<amount> <display-name> <chance>"
+      - "%prefix% &cAdd a valid amount from 1 to 64"
+    display-name-usage:
+      - "%prefix% &a/cb create customitem <item-key> <material> <amount> &c<display-name> <chance>"
+      - "%prefix% &cAdd a valid displayname(don't use spaces in here, just in config)"
+    chance-usage:
+      - "%prefix% &a/cb create customitem <item-key> <material> <amount> <display-name> &c<chance>"
+      - "%prefix% &cAdd a chance from 0 to 100"
 
 CuteBees:
   #%bees-name%
@@ -19,64 +39,3 @@ CuteBees:
   bee-glowing: false
   custom-name-visible: true
   every-bee-baby: true
-
-
-
-custom-bee-drops:
-  #Common drop
-  item1:
-    item-id: "HONEYCOMB"
-    display-name: "&7[  &eHoney  &7]"
-    ammount: 3
-    #chance 0 to 100.
-    chance: 60
-    #Flags: HIDE_ENCHANTS, HIDE_ATTRIBUTES, HIDE_DESTROYS, HIDE_PLACED_ON, HIDE_POTION_EFFECTS, HIDE_UNBREAKABLE, HIDE_ALL_FLAG
-    item-flags:
-      - 'HIDE_ALL_FLAG'
-    #If you don'T want to use enchantments just leave empty and use [] at end of string(enchantments: [])
-    enchantments:
-      - 'FORTUNE:10'
-    lore:
-      - ''
-      - '&dHmm&c.... &fHoney, &6Yummy Yummy'
-      - ''
-      - '&7&oRarity: &aCommon'
-      - ''
-  #Etremely rare drop(you can customize everything)
-  item2:
-    item-id: "NETHERITE_INGOT"
-    display-name: "&5Netherite"
-    ammount: 1
-    #chance 0 to 100.
-    chance: 5
-    #Flags: HIDE_ENCHANTS, HIDE_ATTRIBUTES, HIDE_DESTROYS, HIDE_PLACED_ON, HIDE_POTION_EFFECTS, HIDE_UNBREAKABLE, HIDE_ALL_FLAG
-    item-flags:
-      - 'HIDE_ENCHANTS'
-    #If you don'T want to use enchantments just leave empty and use [] at end of string(enchantments: [])
-    enchantments:
-      - 'FORTUNE:100'
-      - 'UNBREAKING:1'
-    lore:
-      - ''
-      - '&dThis is the best &6&ldiamond &din the world'
-      - ''
-      - ''
-  #Etremely rare drop(you can customize everything)
-  item3:
-    item-id: "IRON_SWORD"
-    display-name: "&6Hamer"
-    ammount: 1
-    #chance 0 to 100.
-    chance: 10
-    #Flags: HIDE_ENCHANTS, HIDE_ATTRIBUTES, HIDE_DESTROYS, HIDE_PLACED_ON, HIDE_POTION_EFFECTS, HIDE_UNBREAKABLE, HIDE_ALL_FLAG
-    item-flags:
-      - 'HIDE_ATTRIBUTES'
-    #If you don'T want to use enchantments just leave empty and use [] at end of string(enchantments: [])
-    enchantments:
-      - 'FORTUNE:100'
-      - 'UNBREAKING:1000'
-    lore:
-      - ''
-      - '&dThis is the best &6&lHamer &din the world'
-      - ''
-      - ''

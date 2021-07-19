@@ -1,6 +1,6 @@
 name: CuteBees_CustomBeeRework
 main: com.fighter.cutebees.main.Main
-version: 1.0.6-REWORKED
+version: 1.0.7
 api-version: 1.13
 commands:
   cutebees:

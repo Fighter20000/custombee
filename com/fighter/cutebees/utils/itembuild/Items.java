@@ -41,4 +41,8 @@ public abstract class Items {
     public abstract ItemBuild setUnbreakable(boolean bool);
 
     public abstract ItemBuild setSkullOwner(OfflinePlayer owner);
+
+    public abstract int getChance();
+
+    public abstract void setChance(int item_chance);
 }

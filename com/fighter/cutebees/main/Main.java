@@ -1,6 +1,8 @@
 package com.fighter.cutebees.main;
 
 import com.fighter.cutebees.commands.Commands;
+import com.fighter.cutebees.custom_file_manager.CustomItemFile;
+import com.fighter.cutebees.listeners.CustomInventoryListener;
 import com.fighter.cutebees.listeners.EntityBeeDeathDropListener;
 import com.fighter.cutebees.listeners.beeSpawnListener;
 import com.fighter.cutebees.runnable.CustomTask;
@@ -12,6 +14,9 @@ import org.bukkit.Server;
 import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
+
+import java.util.Arrays;
+import java.util.Objects;
 
 public class Main extends JavaPlugin {
 
@@ -32,10 +37,14 @@ public class Main extends JavaPlugin {
         instance = this;
 
         sender.sendMessage(ChatColor.GREEN + "[ CuteBees ] " + ChatColor.YELLOW + "The plugin has been enabled on this server!");
+        sender.sendMessage(util.versionCheckerForHex(Arrays.asList("1.16","1.17")) ? util.pch("&a[ CuteBees ] " + "&7Does the server version support hex colors? &2Yes &6("+Bukkit.getServer().getBukkitVersion()+")") : util.pch("&a[ CuteBees ] " + "&7Does the server version support hex colors? &4No &6("+Bukkit.getServer().getBukkitVersion()+")"));
         saveDefaultConfig();
         WorldEnable.generateWorldFile();
+        CustomItemFile.generateCustomItemFile();
         registerListeners();
         registerCommands();
+        EntityBeeDeathDropListener.loadCustomItems();
+
         task = new CustomTask(this, 0, 20) {
             @Override
             public void run() {
@@ -50,8 +59,10 @@ public class Main extends JavaPlugin {
 
     }
 
+
+
     private void registerCommands() {
-        getCommand("cutebees").setExecutor(new Commands());
+        Objects.requireNonNull(getCommand("cutebees")).setExecutor(new Commands());
     }
 
     public CustomTask getTask() {
@@ -69,5 +80,6 @@ public class Main extends JavaPlugin {
     private void registerListeners() {
         pm.registerEvents(new beeSpawnListener(this), this);
         pm.registerEvents(new EntityBeeDeathDropListener(), this);
+        pm.registerEvents(new CustomInventoryListener(), this);
     }
 }
